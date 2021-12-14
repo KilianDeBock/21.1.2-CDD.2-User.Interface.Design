@@ -1,0 +1,35 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+.hero{
+    background-image:url('https://picsum.photos/id/237/1000/1000');
+    background-size:cover;
+    width: 100%;
+    min-height: 500px;
+    display: grid;
+    grid-template-columns:   1fr;
+    grid-template-rows: 1fr repeat(2, 2fr) 1fr;
+}
+
+.title{
+    background-color:tomato;
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+}
+.content{
+    background-color:tomato;
+    grid-column: -2 / -1;
+    grid-row: -2 / -1;
+}
+
+@media (min-width:700px) {
+    .hero{
+        grid-template-columns:  repeat(3, 1fr) 3fr;
+        grid-template-rows: 1fr repeat(2, 2fr) 1fr;
+    }
+ 
+   
+}
