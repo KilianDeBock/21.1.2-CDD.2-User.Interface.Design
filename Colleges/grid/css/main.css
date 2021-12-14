@@ -1,0 +1,41 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/*.container {
+    grid-template-columns: ....; !* template afmeting kolommen *!
+    grid-template-rows: ....;
+    grid-template: !*columns  *! /  !* rows  *!;
+    grid-auto-rows: !* hoe groot moet je nieuwe row zijn als hij niet in het grid is gedefinieerd *!
+    grid-auto-flow: column; !* als je meer kolommen hebt dan gedefinieerd, normaal zal dit op een nieuwe rij komen, maar door grid-auto-flow: column; dan zal die toegevoegd worden als een extra kolom *!
+    grid-auto-columns: ; !* automatisch aangemaakte kolommen, hoe breed moeten die zijn  *!
+    grid-auto-flow: dense; !* gaten vullen indien ervoor een plaats overschoot*!
+}*/
+
+.container {
+    display: grid;
+    /*grid-template-columns: 300px repeat(3, 1fr);*/
+    grid-template-columns: 100px 150px 300px;
+    grid-template-rows: 400px 140px;
+    grid-auto-rows: 150px;
+    gap: 20px;
+    row-gap: 30px;
+    max-width: 100%;
+    width: 800px;
+}
+
+.item {
+    background-color: tomato;
+}
+
+.item1 {
+    background-color: goldenrod;
+}
+
+.item6 {
+    grid-column: 1 / -1;
+    grid-row: span 2;
+    background-color: aquamarine;
+}
