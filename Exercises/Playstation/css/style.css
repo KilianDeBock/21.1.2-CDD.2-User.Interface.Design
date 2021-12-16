@@ -1,0 +1,241 @@
+@import url("https://fonts.googleapis.com/css2?family=Odibee+Sans&family=Open+Sans:ital,wght@0,300;1,300&display=swap");
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    word-break: break-word;
+}
+
+body {
+    line-height: 1.5rem;
+    background-color: black;
+    background-image: url("../assets/background.png");
+    background-repeat: repeat-x;
+    background-position: 50% 0;
+    font-family: "Open Sans", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1,
+h2,
+h3 {
+    font-family: "Odibee Sans", "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-weight: normal;
+}
+
+h1 {
+    font-size: 4rem;
+    letter-spacing: .3rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+.title,
+.new,
+footer {
+    padding: 2rem;
+}
+
+img {
+    object-fit: cover;
+    max-width: 100%;
+    width: 100%;
+    height: 20rem;
+}
+
+
+.content {
+    width: 62rem;
+    max-width: 100%;
+    margin: 3rem auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, auto);
+    grid-template-areas:
+        "title"
+        "photo1"
+        "new"
+        "photo2"
+        "haptic"
+        "footer"
+}
+
+.content > * {
+    background-color: white;
+}
+
+.screenshot {
+    display: none;
+    grid-area: screenshot;
+}
+
+.title {
+    display: flex;
+    grid-area: title;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+.new {
+    grid-area: new;
+    background: linear-gradient(90deg, rgba(249,114,190,1) 0%, rgba(151,108,221,1) 100%);
+}
+
+.haptic {
+    color: white;
+    grid-area: haptic;
+    background: linear-gradient(90deg, rgb(16, 25, 49) 0%, black 100%);
+}
+
+.haptic a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.haptic .text {
+    padding: 2rem;
+}
+
+.haptic img {
+    height: 80%;
+}
+
+.photo1 {
+    height: 20rem;
+    grid-area: photo1;
+}
+
+.photo2 {
+    height: 20rem;
+    grid-area: photo2;
+}
+
+footer {
+    display: flex;
+    grid-area: footer;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+footer > * {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+footer > *:nth-child(2) {
+    flex-grow: 1;
+    padding: 2rem;
+}
+
+footer > *:last-child {
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+}
+
+footer .euros {
+    line-height: 1;
+    font-weight: bold;
+    display: block;
+    position: relative;
+    font-size: 3rem;
+}
+
+footer .cents {
+    font-size: 1rem;
+    position: absolute;
+    top: .4rem;
+    width: 2rem;
+}
+
+footer img {
+    height: 5rem;
+    width: 7rem;
+    max-width: 100%;
+}
+
+.btn {
+    margin-top: 1rem;
+    text-transform: uppercase;
+    color: white;
+    background-color: black;
+    padding: 1rem 2.5rem;
+    border-radius: 3rem;
+    border: none;
+}
+
+
+@media (min-width: 768px) {
+    .content {
+        grid-template-columns: 2fr 1fr;
+        grid-template-rows: repeat(5, auto);
+        grid-template-areas:
+            "title photo2"
+            "photo1 photo2"
+            "new new"
+            "haptic haptic"
+            "footer footer"
+    }
+
+    .new {
+        background: linear-gradient(90deg, transparent 35%, rgba(249,114,190,1) 45%, rgba(151,108,221,1) 100%), no-repeat left/60% url("../assets/controller.jpg");
+    }
+
+    .new .text {
+        float: right;
+        width: 50%;
+    }
+
+    .haptic {
+        background: linear-gradient(90deg, rgb(16, 25, 49) 45%, transparent 55%), no-repeat right/70% url("../assets/environment.jpg");
+    }
+
+    .haptic .text {
+        width: 40%;
+    }
+
+    footer > * {
+        width: 25%;
+    }
+
+    .photo2,
+    .photo1 {
+        height: 100%
+    }
+
+    img {
+        height: 100%
+    }
+
+    .haptic img {
+        display: none;
+    }
+
+}
+
+@media (min-width:992px) {
+    .content {
+        grid-template-columns: 2fr repeat(2, 1fr);
+        grid-template-rows: repeat(5, auto);
+        grid-template-areas:
+            "screenshot title title"
+            "screenshot photo1 photo1"
+            "new new photo2"
+            "haptic haptic photo2"
+            "footer footer footer"
+    }
+
+    .screenshot {
+        display: block;
+    }
+}
